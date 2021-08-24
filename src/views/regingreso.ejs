@@ -13,31 +13,26 @@
 <body >
     <div  class="container  shadow p-3  bg-white rounded achicadorcompulsivo alineadorgeneral">
        
-            <p class="h2 margenes alineadordetexto">Ingrese los datos del estacionamiento</p>
+            <p class="h2 margenes alineadordetexto">Ingrese los datos egreso</p>
         
-    <form action="/estacionamiento/registrar" method="POST">
+    <form action="estacionamiento/pregegreso" method="POST">
+       
         <div class="mb-3 flexeador">
             <div class="corregidordelabels">
-                <label for="exampleInputEmail1" class="form-label">Direccion</label>
+                <label for="exampleInputEmail1" class="form-label">ID</label>
             </div>
          <div class="corregidordeinput">
-             <input type="text" class="form-control" name="direccion">
-        </div>
-          
-        </div>
-        <div class="mb-3 flexeador">
-            <div class="corregidordelabels">
-                <label for="exampleInputPassword1" class="form-label">Disponibilidad</label>
-            </div>
-         <div class="corregidordeinput">
-            <input type="number" class="form-control" name="lugares">
+             <input type="number" class="form-control" name="direccion">
         </div>
           
         </div>
         
-        <div class="alineadordebotones bajador">
+        
+        <div class="alineadordebotones">
         <button type="submit" class="btn btn-dark">Aceptar</button>
         </div>
+
+
       </form>
     </div>
 </body>
