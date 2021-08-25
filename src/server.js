@@ -16,6 +16,6 @@ app.use(require("./routes/index.js"));
 app.use(express.static(__dirname + "/public"));
 
 //Arrancar el server
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Esta andando");
 });
