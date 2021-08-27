@@ -1,0 +1,43 @@
+.centradormaximo{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+}
+
+
+.panelderecha{
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   padding: 13px;
+    
+}
+.panelizquierda{
+    background: url(fondoa.jpg) no-repeat center center/cover ;   
+    background-position: center;
+    opacity: 1;
+    padding: 3px;
+}
+
+.centradormargenes{
+   margin-top: auto;
+   margin-bottom: auto;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+.contenedor{
+    width: 50%;
+    height: 60%;
+}
+.interiores{
+    height: 100%;
+    width: 50%;
+}
+.alejarboton{
+    padding-top: 10px;
+}
