@@ -19,18 +19,30 @@
             </div>
             <div class=" panelderecha interiores text-center">
                 <h2>Ingresa tus datos</h2>
-                <form>
+                <form action="/signup" method="POST">
+                  <div class="form-group ">
+                    <label for="exampleInputPassword1">Apellido</label>
+                    <input type="text" class="form-control" id="ingresonombre" placeholder="Wayne" name="apellido">
+                  </div>
                     <div class="form-group ">
                         <label for="exampleInputPassword1">Nombre</label>
-                        <input type="text" class="form-control" id="ingresonombre" placeholder="Bruce Wayne" name="nombre">
+                        <input type="text" class="form-control" id="ingresonombre" placeholder="Bruce" name="nombre">
+                      </div>
+                      <div class="form-group ">
+                        <label for="exampleInputPassword1">DNI</label>
+                        <input type="text" class="form-control" id="ingresonombre" placeholder="123456789" name="dni">
                       </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">E-mail</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Batman123@hotmail.com" name="mail">                   
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Batman123@hotmail.com" name="correo">                   
                     </div>
                     <div class="form-group ">
                       <label for="exampleInputPassword1">Contraseña</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****" name="pass">
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****" name="contraseña">
+                    </div>
+                    <div class="form-group ">
+                      <label for="exampleInputPassword1">Telefono Celular</label>
+                      <input type="text" class="form-control" id="ingresonombre" placeholder="123456789" name="celular">
                     </div>
                     
                     
