@@ -2,8 +2,9 @@ const express = require("express");
 const path = require("path");
 const fs = require("fs");
 const router = express.Router();
+const pool = require("../db/db");
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   res.render("index");
 });
 
