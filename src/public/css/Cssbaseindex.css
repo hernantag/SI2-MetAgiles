@@ -1,0 +1,39 @@
+.fondo{
+    background: url(fondo.jpg) no-repeat center center/cover ;   
+    display: flex;
+    height: 350px;
+    background-position: center;
+    opacity: 1;
+    
+}
+body{
+    background-color: whitesmoke;
+}
+
+.flexeador{
+    display: flex;
+    justify-content: space-around;
+}
+
+.paddiadorserial{
+    padding-top: 30px;
+}
+
+.alineadordebotones{
+    display: flex;
+    justify-content: center;
+}
+
+.locuras:hover{background-color:rgb(46, 45, 45);
+
+transform: scale(1.1);
+transition: 1ms;
+}
+
+
+
+
+.alineadordetextos{
+    text-align: center;
+}
+

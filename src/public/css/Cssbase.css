@@ -1,0 +1,48 @@
+body{
+    background: url(fondoa.jpg) no-repeat center center/cover ;   
+    background-position: center;
+    opacity: 1;
+    
+}
+
+.alineadordetexto{
+    text-align: center;
+}
+.bajador{
+padding-top: 20px;
+
+}
+.achicadorcompulsivo{
+    max-width: 500px;
+}
+.alineadordebotones{
+    display: flex;
+    justify-content: center;
+}
+.flexeador{
+    display: flex;
+    flex-direction: row;
+  
+    
+    
+}
+.corregidordelabels{
+    width: 100px;
+    padding-top: 3px;
+    
+}
+
+.corregidordeinput{
+width: 80%;
+padding-left: 15px;
+padding-right: 15px;
+}
+
+.margenes{
+    margin-bottom: 35px;
+    
+}
+.alineadorgeneral{
+    margin: auto;
+    margin-top: 150px;
+}
