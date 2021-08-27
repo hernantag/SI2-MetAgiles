@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/CssLOGIN.css">
+
+    <title>Registrarse</title>
+</head>
+<body >
+    
+    <div class=" centradormaximo">
+
+        <div class="shadow-lg bg-white rounded contenedor centradormaximo centradormargenes">
+            <div class=" panelizquierda interiores">
+            
+            </div>
+            <div class=" panelderecha interiores text-center">
+                <h2>Ingresa tus datos</h2>
+                <form action="/signup" method="POST">
+                  <div class="form-group ">
+                    <label for="exampleInputPassword1">Apellido</label>
+                    <input type="text" class="form-control" id="ingresonombre" placeholder="Wayne" name="apellido">
+                  </div>
+                    <div class="form-group ">
+                        <label for="exampleInputPassword1">Nombre</label>
+                        <input type="text" class="form-control" id="ingresonombre" placeholder="Bruce" name="nombre">
+                      </div>
+                      <div class="form-group ">
+                        <label for="exampleInputPassword1">DNI</label>
+                        <input type="text" class="form-control" id="ingresonombre" placeholder="123456789" name="dni">
+                      </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">E-mail</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Batman123@hotmail.com" name="correo">                   
+                    </div>
+                    <div class="form-group ">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="*****" name="contraseña">
+                    </div>
+                    <div class="form-group ">
+                      <label for="exampleInputPassword1">Telefono Celular</label>
+                      <input type="text" class="form-control" id="ingresonombre" placeholder="123456789" name="celular">
+                    </div>
+                    
+                    
+                    <div class="alejarboton">
+
+                        <button type="submit" class="btn btn-dark">Registrarse</button>
+                    </div>
+                    
+                  </form>
+            </div>
+        </div>
+        
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
