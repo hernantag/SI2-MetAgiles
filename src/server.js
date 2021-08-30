@@ -35,7 +35,7 @@ app.use(passport.session());
 
 //Router(Rutas)
 app.use(require("./routes/index.js"));
-app.use(require("./routes/admin/admin.js"));
+app.use(require("./routes/usuarios/admin.js"));
 app.use(require("./routes/autenticacion"));
 
 //Archivos estaticos
