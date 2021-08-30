@@ -3,11 +3,11 @@ const router = express.Router();
 const passport = require("passport");
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("./auth/signup");
 });
 
 router.get("/login", (req, res) => {
-  res.render("login");
+  res.render("./auth/login");
 });
 
 router.get("/logout", (req, res) => {
