@@ -4,7 +4,14 @@ const fs = require("fs");
 const router = express.Router();
 const pool = require("../db/db");
 
+const { isAdmin, isLoggedIn } = require("../config/helpers");
+
 router.get("/", async (req, res) => {
+  if (req.isAuthenticated()) {
+    if (req.user.Tipo == 3) {
+      res.redirect("/admin");
+    }
+  }
   res.render("index");
 });
 
