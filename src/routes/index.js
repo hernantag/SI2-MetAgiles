@@ -4,13 +4,12 @@ const fs = require("fs");
 const router = express.Router();
 const pool = require("../db/db");
 
-const { isAdmin, isLoggedIn } = require("../config/helpers");
+const { isAdmin, isLoggedIn, isOwner } = require("../config/helpers");
 
 router.get("/", async (req, res) => {
   if (req.isAuthenticated()) {
-    if (req.user.Tipo == 3) {
-      res.redirect("/admin");
-    }
+    if (req.user.Tipo == 3) res.redirect("/admin");
+    else if (req.user.Tipo == 2) res.redirect("/lista");
   }
   res.render("index");
 });
@@ -29,6 +28,13 @@ router.get("/regegreso", (req, res) => {
 
 router.get("/error", (req, res) => {
   res.render("error");
+});
+
+router.get("/lista", isLoggedIn, isOwner, async (req, res) => {
+  let estacionamientos = await pool.query(
+    "SELECT * FROM estacionamiento WHERE id_usuario =" + req.user.Id_usuario
+  );
+  res.render("tablas", { estacionamientos });
 });
 
 router.post("/estacionamiento/registrar", (req, res) => {

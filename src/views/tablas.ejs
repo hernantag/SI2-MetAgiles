@@ -37,46 +37,22 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <% estacionamientos.forEach(elemento=> { %>
                     <tr>
-                        <td>Subhash</td>
-                        <td>Administration</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
+                        <td><%= elemento.nombre %> </td>
+                        <td><%= elemento.direccion %></td>
+                        <td><%= elemento.cap_auto %></td>
+                        <td><%= elemento.cap_moto %></td>
+                        <td><%= elemento.precioxhs_auto %></td>
+                        <td><%= elemento.precioxhs_moto %></td>
                         <td>
 							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
                             <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
                             <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Subhash</td>
-                        <td>Administration</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Subhash</td>
-                        <td>Administration</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>88***88***</td>
-                        <td>
-							<a class="add" title="Add" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons"></i></a>
-                            <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons"></i></a>
-                        </td>
-                    </tr>      
+                    <% }) %>     
                 </tbody>
             </table>
         </div>
-    </div>    
+    </div>  
