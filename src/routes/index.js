@@ -37,41 +37,11 @@ router.get("/lista", isLoggedIn, isOwner, async (req, res) => {
   res.render("tablas", { estacionamientos });
 });
 
-router.post("/estacionamiento/registrar", (req, res) => {
-  let estacionamientos = require("../data/estacionamientos.json");
-  let id;
-
-  console.log(req.body);
-
-  if (estacionamientos.estacionamientos.length == 0) {
-    id = 1;
-  } else {
-    id =
-      estacionamientos.estacionamientos[
-        estacionamientos.estacionamientos.length - 1
-      ].id + 1;
-  }
-
-  let newEstacionamiento = {
-    id: id,
-    lugares: req.body.lugares,
-    lugaresocupados: 0,
-    direccion: req.body.direccion,
-  };
-
-  estacionamientos.estacionamientos.push(newEstacionamiento);
-  fs.writeFile(
-    path.join(__dirname, "..", "data", "estacionamientos.json"),
-    JSON.stringify(estacionamientos),
-    "utf-8",
-    (err) => {
-      if (err) {
-        return console.log(err);
-      }
-    }
-  );
-
-  res.redirect("/");
+router.post("/estacionamiento/registrar", isLoggedIn, async (req, res) => {
+  let estacionamiento = req.body;
+  estacionamiento.id_usuario = req.user.Id_usuario;
+  await pool.query("INSERT INTO estacionamiento SET ?", [estacionamiento]);
+  res.redirect("/lista");
 });
 
 router.post("/estacionamiento/pregingreso", (req, res) => {
