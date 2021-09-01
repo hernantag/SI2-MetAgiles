@@ -4,13 +4,12 @@ const fs = require("fs");
 const router = express.Router();
 const pool = require("../db/db");
 
-const { isAdmin, isLoggedIn } = require("../config/helpers");
+const { isAdmin, isLoggedIn, isOwner } = require("../config/helpers");
 
 router.get("/", async (req, res) => {
   if (req.isAuthenticated()) {
-    if (req.user.Tipo == 3) {
-      res.redirect("/admin");
-    }
+    if (req.user.Tipo == 3) res.redirect("/admin");
+    else if (req.user.Tipo == 2) res.redirect("/lista");
   }
   res.render("index");
 });
@@ -31,41 +30,18 @@ router.get("/error", (req, res) => {
   res.render("error");
 });
 
-router.post("/estacionamiento/registrar", (req, res) => {
-  let estacionamientos = require("../data/estacionamientos.json");
-  let id;
-
-  console.log(req.body);
-
-  if (estacionamientos.estacionamientos.length == 0) {
-    id = 1;
-  } else {
-    id =
-      estacionamientos.estacionamientos[
-        estacionamientos.estacionamientos.length - 1
-      ].id + 1;
-  }
-
-  let newEstacionamiento = {
-    id: id,
-    lugares: req.body.lugares,
-    lugaresocupados: 0,
-    direccion: req.body.direccion,
-  };
-
-  estacionamientos.estacionamientos.push(newEstacionamiento);
-  fs.writeFile(
-    path.join(__dirname, "..", "data", "estacionamientos.json"),
-    JSON.stringify(estacionamientos),
-    "utf-8",
-    (err) => {
-      if (err) {
-        return console.log(err);
-      }
-    }
+router.get("/lista", isLoggedIn, isOwner, async (req, res) => {
+  let estacionamientos = await pool.query(
+    "SELECT * FROM estacionamiento WHERE id_usuario =" + req.user.Id_usuario
   );
+  res.render("tablas", { estacionamientos });
+});
 
-  res.redirect("/");
+router.post("/estacionamiento/registrar", isLoggedIn, async (req, res) => {
+  let estacionamiento = req.body;
+  estacionamiento.id_usuario = req.user.Id_usuario;
+  await pool.query("INSERT INTO estacionamiento SET ?", [estacionamiento]);
+  res.redirect("/lista");
 });
 
 router.post("/estacionamiento/pregingreso", (req, res) => {

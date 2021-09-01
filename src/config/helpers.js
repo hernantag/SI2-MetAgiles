@@ -14,4 +14,11 @@ helpers.isAdmin = (req, res, next) => {
   return res.redirect("/");
 };
 
+helpers.isOwner = (req, res, next) => {
+  if (req.user.Tipo == 2) {
+    return next();
+  }
+  return res.redirect("/");
+};
+
 module.exports = helpers;

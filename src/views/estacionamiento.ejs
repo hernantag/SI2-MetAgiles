@@ -16,25 +16,60 @@
             <p class="h2 margenes alineadordetexto">Ingrese los datos del estacionamiento</p>
         
     <form action="/estacionamiento/registrar" method="POST">
-        <div class="mb-3 flexeador">
+    <div style="display: box;">
+        <div class="mb-3" style="display: flex;" >
+            <div class="corregidordelabels">
+                <label for="exampleInputEmail1" class="form-label">Nombre</label>
+            </div>
+         <div class="corregidordeinput">
+             <input type="text" class="form-control" name="nombre">
+        </div>
+    </div>
+
+        <div class="mb-3" style="display: flex;">
             <div class="corregidordelabels">
                 <label for="exampleInputEmail1" class="form-label">Direccion</label>
             </div>
          <div class="corregidordeinput">
              <input type="text" class="form-control" name="direccion">
         </div>
-          
-        </div>
-        <div class="mb-3 flexeador">
+    </div>
+
+        <div class="mb-3" style="display: flex;">
             <div class="corregidordelabels">
-                <label for="exampleInputPassword1" class="form-label">Disponibilidad</label>
+                <label for="exampleInputPassword1" class="form-label">Disponibilidad para auto</label>
             </div>
          <div class="corregidordeinput">
-            <input type="number" class="form-control" name="lugares">
+            <input type="number" class="form-control" name="cap_auto">
+        </div>
+    </div>
+
+        <div class="mb-3" style="display: flex;">
+            <div class="corregidordelabels">
+                <label for="exampleInputPassword1" class="form-label">Disponibilidad para moto</label>
+            </div>
+         <div class="corregidordeinput">
+            <input type="number" class="form-control" name="cap_moto">
+        </div>
+    </div>
+        <div class="mb-3" style="display: flex;">
+            <div class="corregidordelabels">
+                <label for="exampleInputPassword1" class="form-label">Precio por hora para auto</label>
+            </div>
+         <div class="corregidordeinput">
+            <input type="number" class="form-control" name="precioxhs_auto">
+        </div>
+    </div>
+        <div class="mb-3" style="display: flex;">
+            <div class="corregidordelabels">
+                <label for="exampleInputPassword1" class="form-label">Precio por hora para moto</label>
+            </div>
+         <div class="corregidordeinput">
+            <input type="number" class="form-control" name="precioxhs_moto">
         </div>
           
-        </div>
-        
+    </div>
+    </div>
         <div class="alineadordebotones bajador">
         <button type="submit" class="btn btn-dark">Aceptar</button>
         </div>
